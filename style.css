@@ -1,7 +1,12 @@
 body{
-    text-align: center;
-    font-size: 40px;
     font-family: Roboto;
     background-color:#44475a;
-    color: white;
+}
+.topbar{
+text-align: center;
+margin-top: 40px;
+}
+.github-logo{
+    margin-left: 10px;
+    margin-right: 10px;
 }
