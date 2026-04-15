@@ -1,6 +1,7 @@
-import { Menu, Target } from 'lucide-react';
+import { Menu, Target, X } from 'lucide-react';
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
+import AnimatedButton from './AnimatedButton';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,24 +10,30 @@ const Navbar = () => {
   };
   return (
     <>
-      <div className="relative flex items-center justify-between p-6">
-        <div>
+      <div className="relative flex flex-none items-center justify-between p-6">
+        <div className="cursor-pointer">
           <Target />
         </div>
         <ul className="hidden gap-10 text-xl font-semibold md:flex">
-          <li className="rounded p-2 hover:bg-blue-300">
-            <a href="#">Pojects</a>
+          <li className="rounded px-4 py-2 hover:bg-blue-300">
+            <AnimatedButton>
+              <a href="#">Pojects</a>
+            </AnimatedButton>
           </li>
-          <li className="rounded p-2 hover:bg-blue-300">
-            <a href="#">Resume</a>
+          <li className="rounded px-4 py-2 hover:bg-blue-300">
+            <AnimatedButton>
+              <a href="#">Resume</a>
+            </AnimatedButton>
           </li>
-          <li className="rounded p-2 hover:bg-blue-300">
-            <a href="#">Github</a>
+          <li className="rounded px-4 py-2 hover:bg-blue-300">
+            <AnimatedButton>
+              <a href="#">Github</a>
+            </AnimatedButton>
           </li>
         </ul>
-        <div className="cursor-pointer md:hidden">
+        <div className="md:hidden">
           <button onClick={toggleMenu} className="cursor-pointer">
-            <Menu />
+            {isOpen ? <X /> : <Menu />}
           </button>
         </div>
       </div>
@@ -37,16 +44,22 @@ const Navbar = () => {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            transition={{ duration: 0.3, ease: 'easeOut' }}
           >
             <li className="rounded px-4 py-2 hover:bg-blue-300">
-              <a href="#">Pojects</a>
+              <AnimatedButton>
+                <a href="#">Pojects</a>
+              </AnimatedButton>
             </li>
-            <li className="rounded p-2 hover:bg-blue-300">
-              <a href="#">Resume</a>
+            <li className="rounded px-4 py-2 hover:bg-blue-300">
+              <AnimatedButton>
+                <a href="#">Resume</a>
+              </AnimatedButton>
             </li>
-            <li className="rounded p-2 hover:bg-blue-300">
-              <a href="#">Github</a>
+            <li className="rounded px-4 py-2 hover:bg-blue-300">
+              <AnimatedButton>
+                <a href="#">Github</a>
+              </AnimatedButton>
             </li>
           </motion.ul>
         )}
