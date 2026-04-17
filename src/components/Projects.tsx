@@ -19,6 +19,19 @@ const Projects = () => {
                 </div>
                 <div>
                     <div className="flex gap-1 hover:underline">
+                        <a href="https://github.com/manbeermaken/waygood-backend" target="_blank">
+                            <h1 className="text-3xl mb-2 md:text-4xl font-bold">College Application Tracker</h1>
+                        </a>
+                        <ExternalLink size={16} />
+                    </div>
+                    <div>
+                        <p>
+                            Built a MongoDB recommendation engine with weighted scoring, enforced data integrity and type safety via Zod, and automated REST API testing using Vitest and Supertest.
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div className="flex gap-1 hover:underline">
                         <a href="https://github.com/manbeermaken/api-rate-limiter" target="_blank">
                             <h1 className="text-3xl mb-2 md:text-4xl font-bold">Api Rate Limiter</h1>
                         </a>
